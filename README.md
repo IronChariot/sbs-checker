@@ -10,3 +10,9 @@ The task here has two parts:
 The model will be asked to return a standard answer if there were no mistakes, so we can quickly identify when it did find something, and present the user with a list of sentences and associated errors.
 
 An extention of this tool would be for it to take the user through each sentence which had an issue if their own pasted text, and allow keyboard shortcuts to approve or reject a change before moving on to the next issue.
+
+-------------
+
+The part that splits paragraphs into individual sentences isn't reliable (with GPT-3.5), in that (1) it doesn't split sentences correctly, and (2) when it gives the sentences back, it often accidentally corrects typos and mistakes already, which complicates the next part.
+
+The part that corrects sentences (or paragraphs, if we skip the sentence-splitting section) also doesn't work well with GPT-3.5, missing small typos and incorrect words. Switching to GPT-4 for this bit, and it works very well, catching all the mistakes I'd put into my test text. Unfortunately, GPT-4 might be a little expensive for this task. Will evaluate how much it costs on average for a few pages of report with errors here and there.
